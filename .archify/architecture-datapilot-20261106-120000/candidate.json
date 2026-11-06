@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "DataPilot — AI Data Analyst",
+    "subtitle": "Auditable, tool-driven analysis of uploaded CSV data",
+    "locale": "en",
+    "output": "docs/architecture/datapilot.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {"id":"analyst","type":"external","label":"Analyst","sublabel":"Browser","pos":[40,270],"size":[130,62]},
+    {"id":"ui","type":"frontend","label":"DataPilot UI","sublabel":"Vanilla JS + Chart.js","pos":[285,270],"size":[155,62]},
+    {"id":"api","type":"backend","label":"FastAPI API","sublabel":"REST + Server-Sent Events","pos":[530,270],"size":[165,62]},
+    {"id":"session","type":"database","label":"Session Store","sublabel":"In-memory, TTL + lock","pos":[530,110],"size":[165,62]},
+    {"id":"agent","type":"backend","label":"Analyst Agent","sublabel":"Bounded tool-calling loop","pos":[790,270],"size":[170,62]},
+    {"id":"tools","type":"backend","label":"Tool Executor","sublabel":"SQL · charts · quality · forecast","pos":[1050,270],"size":[188,62]},
+    {"id":"sql","type":"database","label":"SQLite Analytics","sublabel":"Read-only sandbox + LRU cache","pos":[1050,470],"size":[188,62]},
+    {"id":"core","type":"backend","label":"Analytics Core","sublabel":"Profiling · anomalies · forecasting","pos":[1370,270],"size":[190,62]},
+    {"id":"llm","type":"external","label":"LLM Provider","sublabel":"OpenAI-compatible tool calling","pos":[790,110],"size":[170,62]}
+  ],
+  "boundaries": [
+    {"kind":"region","label":"DataPilot service process","wraps":["api","session","agent","tools","sql","core"],"pad":28}
+  ],
+  "connections": [
+    {"id":"user-ui","from":"analyst","to":"ui","label":"upload + questions","variant":"emphasis"},
+    {"id":"ui-api","from":"ui","to":"api","label":"REST / SSE","variant":"emphasis"},
+    {"id":"api-session","from":"api","to":"session","label":"session state","fromSide":"top","toSide":"bottom"},
+    {"id":"api-agent","from":"api","to":"agent","label":"run analysis"},
+    {"id":"agent-llm","from":"agent","to":"llm","label":"messages + tools","fromSide":"top","toSide":"bottom"},
+    {"id":"agent-tools","from":"agent","to":"tools","label":"tool calls"},
+    {"id":"tools-sql","from":"tools","to":"sql","label":"read-only SQL","fromSide":"bottom","toSide":"top"},
+    {"id":"tools-core","from":"tools","to":"core","label":"deterministic analysis"}
+  ],
+  "cards": [
+    {"dot":"violet","title":"Auditability","items":["Every numeric answer is grounded in a query result.","Users can inspect, edit, and re-run generated SQL."]},
+    {"dot":"emerald","title":"Safety","items":["CSV ingestion validates size, encoding, shape, and types.","SQLite allows SELECT/WITH only, with an authorizer, timeout, and row cap."]},
+    {"dot":"amber","title":"Runtime boundary","items":["Session data stays in memory and expires after idle TTL.","One app worker is intentional while session state is process-local."]}
+  ]
+}
