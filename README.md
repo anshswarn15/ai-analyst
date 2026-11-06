@@ -253,6 +253,5 @@ render.yaml          Render Blueprint
 - Application source, sample datasets, Dockerfile, Compose file, and Render blueprint
 - Tests, the evaluation harness, and the GitHub Actions workflow
 - Architecture diagram: [`docs/architecture/datapilot.html`](docs/architecture/datapilot.html)
-- Demo walkthrough notes: [`docs/DEMO_SCRIPT.md`](docs/DEMO_SCRIPT.md)
 
 Record the walkthrough from a running app with that script. Save `chat.png`, `anomalies.png`, and `dashboard.png` in [`docs/images/`](docs/images) if the brief asks for stills. The repository does not contain a hosted URL or a video file.
