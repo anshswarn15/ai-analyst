@@ -1,0 +1,21 @@
+product_id,product_name,category,unit_price,unit_cost
+P100,Laptop Pro 14,Electronics,1299,915.52
+P101,Wireless Mouse,Electronics,29,18.5
+P102,Mechanical Keyboard,Electronics,99,71.45
+P103,4K Monitor,Electronics,399,275.1
+P104,Noise-Cancel Headphones,Electronics,249,141.64
+P105,USB-C Hub,Electronics,45,33.53
+P106,Ergonomic Chair,Furniture,349,245.08
+P107,Standing Desk,Furniture,549,388.26
+P108,Bookshelf,Furniture,129,74.26
+P109,Desk Lamp,Furniture,39,24.96
+P110,Notebook 3-pack,Stationery,12,7.49
+P111,Gel Pens 12-pack,Stationery,9,6.62
+P112,Planner 2025,Stationery,19,12.9
+P113,Whiteboard,Stationery,59,42.16
+P114,Coffee Beans 1kg,Grocery,24,15.33
+P115,Green Tea Box,Grocery,14,8.34
+P116,Protein Bars 24,Grocery,32,21.15
+P117,Fax Machine,Electronics,189,106.36
+P118,CD Organizer,Furniture,25,17.89
+P119,Floppy Disks 10-pack,Electronics,15,10.14
