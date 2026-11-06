@@ -1,0 +1,26 @@
+services:
+  datapilot:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      LLM_PROVIDER: ${LLM_PROVIDER:-gemini}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_TEMPERATURE: ${LLM_TEMPERATURE:-}
+      LLM_TIMEOUT_S: ${LLM_TIMEOUT_S:-90}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      MAX_UPLOAD_MB: ${MAX_UPLOAD_MB:-25}
+      MAX_FILES_PER_SESSION: ${MAX_FILES_PER_SESSION:-10}
+      SESSION_TTL_MINUTES: ${SESSION_TTL_MINUTES:-120}
+      MAX_AGENT_STEPS: ${MAX_AGENT_STEPS:-2}
+      SQL_ROW_LIMIT: ${SQL_ROW_LIMIT:-500}
+      SQL_TIMEOUT_S: ${SQL_TIMEOUT_S:-10}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      APP_USERNAME: ${APP_USERNAME:-}
+      APP_PASSWORD: ${APP_PASSWORD:-}
+    restart: unless-stopped

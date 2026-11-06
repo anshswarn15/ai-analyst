@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DataPilot · AI Data Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <aside class="side">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span><span class="brand-copy">DataPilot<small>AI ANALYST</small></span></div>
+
+    <section>
+      <h3><span>Workspace</span><em>DATASETS</em></h3>
+      <div id="tables" class="tables"></div>
+      <div id="dataset-controls" class="dataset-controls" hidden></div>
+      <label class="drop" id="drop">
+        <input type="file" id="file" accept=".csv,.tsv,.txt" multiple hidden>
+        <span class="upload-icon" aria-hidden="true">↑</span><strong>Drop files to analyze</strong><span>CSV, TSV or TXT · max 25 MB</span>
+      </label>
+      <button class="btn ghost" id="btn-samples">Load sample data</button>
+      <div id="upload-notes" class="notes"></div>
+    </section>
+
+    <section>
+      <h3><span>Session</span><em>TOOLS</em></h3>
+      <a class="btn ghost" id="btn-export" href="#" download>Export report (.md)</a>
+      <button class="btn ghost" id="btn-clear">Clear conversation</button>
+      <button class="btn ghost danger" id="btn-clear-data">Clear all data</button>
+    </section>
+
+    <div class="foot"><span class="pulse"></span><span id="health">Connecting to analyst…</span></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <nav class="tabs" role="tablist" aria-label="Workspace views">
+        <button role="tab" class="tab on" data-tab="chat"><span>✦</span> Ask data</button>
+        <button role="tab" class="tab" data-tab="dashboard"><span>▦</span> Dashboard</button>
+        <button role="tab" class="tab" data-tab="quality"><span>◌</span> Data quality</button>
+      </nav>
+      <form method="post" action="/logout" class="logout-form">
+        <button type="submit" class="logout">Log out</button>
+      </form>
+    </header>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <section id="view-chat" class="view on">
+      <div id="feed" class="feed" aria-live="polite">
+        <div id="empty" class="empty">
+          <div class="eyebrow" id="empty-eyebrow">CONVERSATIONAL ANALYTICS</div>
+          <h1 id="empty-title">Turn rows into<br><i>real answers.</i></h1>
+          <p id="empty-copy">Upload CSV files, ask and inspect the SQL behind every answer.</p>
+          <div class="starters" id="starters"></div>
+        </div>
+      </div>
+      <form id="composer" class="composer" autocomplete="off">
+        <div id="chips" class="chips"></div>
+        <div class="row">
+          <textarea id="input" rows="1" maxlength="4000" placeholder="Ask a question about your data…"></textarea>
+          <button class="send" id="send" type="submit"><span>Ask</span><b>↗</b></button>
+        </div>
+        <p class="composer-hint">Press <kbd>Enter</kbd> to send · <kbd>Shift Enter</kbd> for a new line</p>
+      </form>
+    </section>
+
+    <section id="view-dashboard" class="view"><div id="dash" class="panel"></div></section>
+    <section id="view-quality" class="view"><div id="qual" class="panel"></div></section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
