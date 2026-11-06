@@ -255,14 +255,4 @@ render.yaml          Render Blueprint
 - Tests, the evaluation harness, and the GitHub Actions workflow
 - Architecture diagram: [`docs/architecture/datapilot.html`](docs/architecture/datapilot.html)
 
-### Demo and screenshots  
-Run the application locally and record a 10–30 second walkthrough showing: 
-1. Uploading the sample CSV files. 2. Asking a natural-language question and viewing the SQL/chart. 
-3. Opening the dashboard or anomaly detection results.  
-Save screenshots in `docs/images/`: 
-- `chat.png` – chat answer with SQL and chart. 
-- `anomalies.png` – anomaly detection results. 
-- `dashboard.png` – dashboard view.  
-Save the demo video as `docs/demo.mp4`. 
 
-Save `chat.png`, `anomalies.png`, and `dashboard.png` in [`docs/images/`](docs/images) if the brief asks for stills. The repository does not contain a hosted URL or a video file.
