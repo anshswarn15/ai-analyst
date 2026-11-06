@@ -84,7 +84,8 @@ Login is off unless `AUTH_ENABLED=true`. When it is on, only `/login`, `/signup`
 ### Local (Python 3.10+)
 
 ```bash
-git clone <your-repo-url> && cd ai-data-analyst
+git clone https://github.com/anshswarn15/ai-analyst.git
+cd ai-analyst
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements-dev.txt
 
@@ -254,4 +255,14 @@ render.yaml          Render Blueprint
 - Tests, the evaluation harness, and the GitHub Actions workflow
 - Architecture diagram: [`docs/architecture/datapilot.html`](docs/architecture/datapilot.html)
 
-Record the walkthrough from a running app with that script. Save `chat.png`, `anomalies.png`, and `dashboard.png` in [`docs/images/`](docs/images) if the brief asks for stills. The repository does not contain a hosted URL or a video file.
+### Demo and screenshots  
+Run the application locally and record a 10–30 second walkthrough showing: 
+1. Uploading the sample CSV files. 2. Asking a natural-language question and viewing the SQL/chart. 
+3. Opening the dashboard or anomaly detection results.  
+Save screenshots in `docs/images/`: 
+- `chat.png` – chat answer with SQL and chart. 
+- `anomalies.png` – anomaly detection results. 
+- `dashboard.png` – dashboard view.  
+Save the demo video as `docs/demo.mp4`. 
+
+Save `chat.png`, `anomalies.png`, and `dashboard.png` in [`docs/images/`](docs/images) if the brief asks for stills. The repository does not contain a hosted URL or a video file.
