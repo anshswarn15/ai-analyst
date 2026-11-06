@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+.DS_Store
+.idea/
+.vscode/
+data/auth.db
+
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets
+.env
+
+# Local database
+data/auth.db
+
+# OS files
+.DS_Store
+evals/.venv
