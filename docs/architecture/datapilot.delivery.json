@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "59eb794b-fe8c-4b3e-a6c5-874d394f569a",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/anshukkumarswarnkar/Desktop/ai-data-analyst/.archify/architecture-datapilot-20261106-120000/candidate.json",
+  "output": "/Users/anshukkumarswarnkar/Desktop/ai-data-analyst/docs/architecture/datapilot.html",
+  "specification": {
+    "sha256": "bb0f7452acde0dd90b04dc243799f4ebe56838192b09007401e43b5c67ddbb3f",
+    "bytes": 2982
+  },
+  "artifact": {
+    "sha256": "85f6ff1092a182163dd1bea9dc7a31272d83f8b74ee5139127eb62799b4f70d7",
+    "bytes": 760852
+  }
+}
